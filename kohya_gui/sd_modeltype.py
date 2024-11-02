@@ -1,9 +1,12 @@
 from os.path import isfile
 from safetensors import safe_open
 import enum
+from .custom_logging import setup_logging
+
+# Set up logging
+log = setup_logging()
 
 # methodology is based on https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/modules/sd_models.py#L379-L403
-
 
 class ModelType(enum.Enum):
     UNKNOWN = 0
@@ -44,6 +47,9 @@ class SDModelType:
                 self.model_type = ModelType.SD2
             elif hasKeyPrefix("model."):
                 self.model_type = ModelType.SD1
+            else:
+                log.warning("Unknown model type")
+                log.warning(st.keys())
         except:
             pass
 
