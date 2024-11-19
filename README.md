@@ -5,6 +5,7 @@ This repository primarily provides a Gradio GUI for [Kohya's Stable Diffusion tr
 The GUI allows you to set the training parameters and generate and run the required CLI commands to train the model.
 
 ## Table of Contents
+## By Mudassir Alam
 
 - [Kohya's GUI](#kohyas-gui)
   - [Table of Contents](#table-of-contents)
